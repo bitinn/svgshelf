@@ -1,0 +1,36 @@
+{
+  "name": "svgshelf",
+  "version": "1.0.0",
+  "description": "A simple CLI for shelving (or merging, stacking, bundling) multiple svg into a single file",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bitinn/svgshelf.git"
+  },
+  "keywords": [
+    "svg",
+    "merge",
+    "bundle",
+    "stack"
+  ],
+  "author": "David Frank",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bitinn/svgshelf/issues"
+  },
+  "homepage": "https://github.com/bitinn/svgshelf",
+  "bin": "index.js",
+  "devDependencies": {
+    "chai": "^2.0.0",
+    "mocha": "^2.1.0"
+  },
+  "dependencies": {
+    "cheerio": "^0.18.0",
+    "debug": "^2.1.1",
+    "hogan.js": "^3.0.2",
+    "minimist": "^1.1.0"
+  }
+}
