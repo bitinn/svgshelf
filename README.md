@@ -22,16 +22,16 @@ Much of the idea here is based on [grunt-svgstore](https://github.com/FWeinb/gru
 
 # Usage
 
-As a command
+As a command, escape `*` to prevent bash glob expansion
 
-`svgshelf -f svg/folder/ -o output/single.svg`
+`svgshelf svg/input/\*.svg svg/output/single.svg`
 
-As a npm build tool
+As a npm build tool, escape `\` since we are in a string
 
 ```
 {
 	"scripts": {
-		"build": "svgo -f svg/folder/ && svgshelf -f svg/folder/ -o output/single.svg"
+		"build": "svgo -f svg/folder/ && svgshelf svg/input/\\*.svg svg/output/single.svg"
 	}
 }
 ```

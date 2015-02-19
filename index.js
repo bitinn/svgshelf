@@ -7,6 +7,7 @@
  */
 
 var co = require('co');
+var chalk = require('chalk');
 var opts = require('minimist')(process.argv.slice(2));
 var Shelf = require('./lib/svgshelf');
 
@@ -17,5 +18,7 @@ if (!module.parent) {
 
 function factory(opts) {
 	var w = new Shelf(opts);
-	co(w.run);
+	co(w.run).catch(function(err) {
+		console.log(chalk.red(err.stack));
+	});
 };
