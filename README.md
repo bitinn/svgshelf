@@ -22,9 +22,7 @@ And much of the code here are forked from [grunt-svgstore](https://github.com/FW
 
 # Usage
 
-`svgshelf svg/folder/ output/single.svg`
-
-To debug, use `DEBUG=svgshelf svgshelf svg/folder/ output/single.svg`
+`svgshelf -f svg/folder/ -o output/single.svg`
 
 
 # License

@@ -28,8 +28,11 @@
     "mocha": "^2.1.0"
   },
   "dependencies": {
+    "chalk": "^0.5.1",
     "cheerio": "^0.18.0",
-    "debug": "^2.1.1",
+    "co": "^4.4.0",
+    "denodeify": "^1.2.1",
+    "glob": "^4.4.0",
     "hogan.js": "^3.0.2",
     "minimist": "^1.1.0"
   }

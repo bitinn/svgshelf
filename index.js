@@ -6,6 +6,7 @@
  * A simple CLI for shelving multiple svg into a single file
  */
 
+var co = require('co');
 var opts = require('minimist')(process.argv.slice(2));
 var Shelf = require('./lib/svgshelf');
 
@@ -16,5 +17,5 @@ if (!module.parent) {
 
 function factory(opts) {
 	var w = new Shelf(opts);
-	w.run();
+	co(w.run);
 };
