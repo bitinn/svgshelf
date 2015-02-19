@@ -12,7 +12,7 @@ A simple CLI for shelving (or merging, stacking, bundling) multiple svg into a s
 
 We use `npm run build` as our build tool, and since [svgo](https://github.com/svg/svgo) already does the hard work of optimizing our svg files, this is a command line tool to help us with the last step: bundling svg into a single file, so you can reference it as a cachable, single external file, through fragment identifier.
 
-And much of the code here are forked from [grunt-svgstore](https://github.com/FWeinb/grunt-svgstore), which is perfectly fine if you use grunt, but if all you need is a simple CLI, `svgshelf` got your covered.
+Much of the idea here is based on [grunt-svgstore](https://github.com/FWeinb/grunt-svgstore) and [gulp-svgstore](https://github.com/w0rm/gulp-svgstore), which are perfectly fine if you use grunt/gulp, but if all you need is a simple CLI, `svgshelf` got your covered.
 
 
 # Install
@@ -22,7 +22,19 @@ And much of the code here are forked from [grunt-svgstore](https://github.com/FW
 
 # Usage
 
+As a command
+
 `svgshelf -f svg/folder/ -o output/single.svg`
+
+As a npm build tool
+
+```
+{
+	"scripts": {
+		"build": "svgo -f svg/folder/ && svgshelf -f svg/folder/ -o output/single.svg"
+	}
+}
+```
 
 
 # License
