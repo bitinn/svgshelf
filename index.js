@@ -19,6 +19,10 @@ if (!module.parent) {
 function factory(opts) {
 	var w = new Shelf(opts);
 	co(w.run).catch(function(err) {
-		console.log(chalk.red(err.stack));
+		if (err.stack) {
+			console.log(chalk.red(err.stack));
+		} else {
+			console.log(chalk.red(err.message));
+		}
 	});
 };

@@ -34,6 +34,7 @@
     "denodeify": "^1.2.1",
     "glob": "^4.4.0",
     "hogan.js": "^3.0.2",
+    "js-beautify": "^1.5.4",
     "minimist": "^1.1.0"
   }
 }
