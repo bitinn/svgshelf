@@ -25,7 +25,10 @@
   "bin": "index.js",
   "devDependencies": {
     "chai": "^2.0.0",
-    "mocha": "^2.1.0"
+    "chai-as-promised": "^4.2.0",
+    "mocha": "^2.1.0",
+    "sinon": "^1.12.2",
+    "sinon-chai": "^2.7.0"
   },
   "dependencies": {
     "chalk": "^0.5.1",
