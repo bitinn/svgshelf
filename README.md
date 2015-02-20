@@ -37,13 +37,19 @@ As a npm build tool, escape `\` since we are in a string
 ```
 
 
-# Additional arguments
+## Additional arguments
 
 All options are disabled by default.
 
 - `-d` output a demo html alongaside of result svg
 - `-b` format and beautify output svg
 - `-p prefix` add a prefix to each svg icon, so if it was `result.svg#button`, it would be `result.svg#prefixbutton`
+
+
+## Current limits
+
+- For node.js, you need v0.11+ for this module to work properly, and so far both v0.11 and v0.12 require you to set `node --harmony` flag to work with generator, and yes, it's a pain.
+- For complex svg that make use of `url()` linking, merging them may break url reference. We don't expect this to be a problem for svg icons.
 
 
 # License

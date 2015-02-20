@@ -4,7 +4,7 @@
   "description": "A simple CLI for shelving (or merging, stacking, bundling) multiple svg into a single file",
   "main": "index.js",
   "scripts": {
-    "test": "mocha tests/test.js"
+    "test": "mocha --harmony tests/test.js"
   },
   "repository": {
     "type": "git",
