@@ -15,7 +15,6 @@ var denodeify = require('denodeify');
 var cheerio = require('cheerio');
 
 var readFile = denodeify(fs.readFile);
-var writeFile = denodeify(fs.writeFile);
 var deleteFile = denodeify(fs.unlink);
 
 // test subject
@@ -64,22 +63,20 @@ describe('svgshelf', function() {
 	});
 
 	it('should print usage if required arguments are missing', function() {
-		//var log = sinon.stub(console, 'log');
+		var log = sinon.spy(console, 'log');
 		svgshelf = new Shelf({
 			_: ['tests/input/*.svg']
 		});
 		expect(svgshelf.options).to.be.undefined;
-		//expect(log).to.have.been.calledOnce;
-		//log.restore();
+		expect(log).to.have.been.calledOnce;
+		log.restore();
 	});
 
 	it('should merge svg correctly', function() {
-		//var log = sinon.stub(console, 'log');
 		svgshelf = new Shelf({
 			_: ['tests/input/*.svg', 'tests/output/result.svg']
 		});
 		return co(svgshelf.run).then(function() {
-			//log.restore();
 			return readFile('tests/output/result.svg');
 		}).then(function(file) {
 			var $ = cheerio.load(file, { xmlMode: true });
@@ -93,13 +90,11 @@ describe('svgshelf', function() {
 	});
 
 	it('should merge svg with prefix', function() {
-		//var log = sinon.stub(console, 'log');
 		svgshelf = new Shelf({
 			_: ['tests/input/*.svg', 'tests/output/result.svg']
 			, p: ['icon_']
 		});
 		return co(svgshelf.run).then(function() {
-			//log.restore();
 			return readFile('tests/output/result.svg');
 		}).then(function(file) {
 			var $ = cheerio.load(file, { xmlMode: true });
@@ -109,13 +104,11 @@ describe('svgshelf', function() {
 	});
 
 	it('should merge svg with demo', function() {
-		//var log = sinon.stub(console, 'log');
 		svgshelf = new Shelf({
 			_: ['tests/input/*.svg', 'tests/output/result.svg']
 			, d: true
 		});
 		return co(svgshelf.run).then(function() {
-			//log.restore();
 			return readFile('tests/output/result-demo.html');
 		}).then(function(file) {
 			var $ = cheerio.load(file);
@@ -124,13 +117,11 @@ describe('svgshelf', function() {
 	});
 
 	it('should merge svg and beautify output', function() {
-		//var log = sinon.stub(console, 'log');
 		svgshelf = new Shelf({
 			_: ['tests/input/*.svg', 'tests/output/result.svg']
 			, b: true
 		});
 		return co(svgshelf.run).then(function() {
-			//log.restore();
 			return readFile('tests/output/result.svg');
 		}).then(function(file) {
 			expect(file.toString().indexOf('\n')).to.not.equal(-1);

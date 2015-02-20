@@ -4,7 +4,11 @@ Changelog
 
 # 1.x release
 
-## v1.0.1 (master)
+## v1.0.2 (master)
+
+- Enhance: travis tests
+
+## v1.0.1
 
 - Enhance: doc update, test cases, demo
 
