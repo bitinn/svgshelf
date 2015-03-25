@@ -31,13 +31,13 @@
     "sinon-chai": "^2.7.0"
   },
   "dependencies": {
-    "chalk": "^0.5.1",
-    "cheerio": "^0.18.0",
-    "co": "^4.4.0",
+    "chalk": "^1.0.0",
+    "cheerio": "^0.19.0",
+    "co": "^4.5.1",
     "denodeify": "^1.2.1",
-    "glob": "^4.4.0",
+    "glob": "^5.0.3",
     "hogan.js": "^3.0.2",
-    "js-beautify": "^1.5.4",
-    "minimist": "^1.1.0"
+    "js-beautify": "^1.5.5",
+    "minimist": "^1.1.1"
   }
 }

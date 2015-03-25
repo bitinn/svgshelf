@@ -4,7 +4,11 @@ Changelog
 
 # 1.x release
 
-## v1.0.2 (master)
+## v1.0.3 (master)
+
+- Enhance: bump dependencies
+
+## v1.0.2
 
 - Enhance: travis tests
 
